@@ -401,3 +401,25 @@
     }
 
 }
+/* FORCE AI CLEAR MODAL */
+
+#clearModal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 99999 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background: rgba(3, 8, 30, 0.85) !important;
+    backdrop-filter: blur(12px);
+}
+
+#clearModal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
