@@ -1,19 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Smart Estate</title>
+    <title>Smart Estate | AI Flat Price Predictor</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Smart Estate</h1>
+    <!-- Background -->
+    <div class="background"></div>
 
-    <h2>AI-Powered Flat Price Predictor</h2>
+    <!-- Navigation -->
+    <nav class="navbar">
 
-    <p>Estimate and compare property prices using AI.</p>
+        <div class="logo">
+            Smart Estate
+        </div>
+
+        <button class="history-btn">
+            🕘 Prediction History
+        </button>
+
+    </nav>
+
+
+    <!-- Main Section -->
+    <main class="container">
+
+        <section class="card">
+
+            <div class="step">
+                01
+            </div>
+
+            <h1>
+                START YOUR<br>
+                ESTIMATION
+            </h1>
+
+            <p class="subtitle">
+                How many flats do you want to evaluate?
+                Select the number of properties you want to compare
+                and enter separate details for every flat.
+            </p>
+
+
+            <!-- Flat Selection -->
+            <div class="selection">
+
+                <label for="flatNumber">
+                    Number of Flats
+                </label>
+
+                <select id="flatNumber" class="select-box">
+
+                    <option value="">
+                        Select number of flats
+                    </option>
+
+                    <option value="1">
+                        1 Flat
+                    </option>
+
+                    <option value="2">
+                        2 Flats
+                    </option>
+
+                    <option value="3">
+                        3 Flats
+                    </option>
+
+                    <option value="4">
+                        4 Flats
+                    </option>
+
+                    <option value="5">
+                        5 Flats
+                    </option>
+
+                    <option value="6">
+                        6 Flats
+                    </option>
+
+                    <option value="7">
+                        7 Flats
+                    </option>
+
+                    <option value="8">
+                        8 Flats
+                    </option>
+
+                    <option value="9">
+                        9 Flats
+                    </option>
+
+                    <option value="10">
+                        10 Flats
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Continue -->
+            <button class="continue-btn" onclick="startEstimation()">
+
+                Continue
+                →
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        function startEstimation() {
+
+            const flats =
+                document.getElementById("flatNumber").value;
+
+            if (flats === "") {
+
+                alert("Please select the number of flats.");
+
+                return;
+            }
+
+            alert(
+                "You selected " +
+                flats +
+                " flat(s)."
+            );
+
+        }
+
+    </script>
 
 </body>
+
 </html>
