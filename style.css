@@ -1,206 +1,403 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* =====================================================
+          AI CLEAR HISTORY MODAL
+===================================================== */
 
-body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    color: #ffffff;
-    overflow-x: hidden;
-}
+.clear-modal {
 
-/* Background */
-.background {
     position: fixed;
+
     inset: 0;
-    z-index: -2;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80");
-
-    background-size: cover;
-    background-position: center;
-}
-
-/* Light blur layer */
-.background::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: rgba(70, 35, 120, 0.45);
-    backdrop-filter: blur(5px);
-}
-
-/* Navigation */
-.navbar {
-    width: 100%;
-    padding: 22px 7%;
 
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(15px);
+    justify-content: center;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(3, 8, 30, 0.80);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 9999;
+
 }
 
-.logo {
+
+/* OPEN STATE */
+
+.clear-modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =====================================================
+                 MODAL BOX
+===================================================== */
+
+.clear-modal-box {
+
+    width: min(
+        430px,
+        calc(100% - 40px)
+    );
+
+    padding: 35px 32px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101936,
+            #181348
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 45px
+        rgba(99, 72, 255, 0.25);
+
+    transform:
+        scale(0.85)
+        translateY(25px);
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* ANIMATION */
+
+.clear-modal.active
+.clear-modal-box {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+/* =====================================================
+                       AI ICON
+===================================================== */
+
+.ai-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 36px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d3df5,
+            #08aeea
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(72, 120, 255, 0.50);
+
+    animation:
+        aiPulse 2s infinite;
+
+}
+
+
+/* AI GLOW */
+
+@keyframes aiPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 20px
+            rgba(72, 120, 255, 0.35);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 40px
+            rgba(72, 120, 255, 0.70);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 20px
+            rgba(72, 120, 255, 0.35);
+
+    }
+
+}
+
+
+/* =====================================================
+                       TITLE
+===================================================== */
+
+.clear-modal-box h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
     font-size: 25px;
-    font-weight: bold;
+
+    font-weight: 700;
+
 }
 
-.history-btn {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.15);
 
-    color: white;
+/* =====================================================
+                    AI LABEL
+===================================================== */
 
-    padding: 11px 18px;
-    border-radius: 30px;
+.clear-modal-box p {
 
-    cursor: pointer;
+    margin:
+        8px 0 7px;
 
-    transition: 0.3s;
+    color: #8f7cff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
 }
 
-.history-btn:hover {
-    background: white;
-    color: #6d3fc0;
-    transform: translateY(-2px);
-}
 
-/* Main container */
-.container {
-    width: 90%;
-    max-width: 1000px;
+/* =====================================================
+                     DESCRIPTION
+===================================================== */
 
-    margin: 80px auto;
-}
+.clear-modal-box span {
 
-/* Glass card */
-.card {
-    padding: 55px;
-
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
-}
-
-/* Step number */
-.step {
-    color: #e1d2ff;
-    font-size: 14px;
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
-/* Heading */
-h1 {
-    margin-top: 15px;
-
-    font-size: clamp(38px, 6vw, 70px);
-    line-height: 1.05;
-}
-
-.subtitle {
-    margin-top: 20px;
-
-    max-width: 650px;
-
-    font-size: 17px;
-    line-height: 1.7;
-
-    color: rgba(255, 255, 255, 0.82);
-}
-
-/* Selection box */
-.selection {
-    margin-top: 40px;
-}
-
-.selection label {
     display: block;
 
-    margin-bottom: 12px;
+    color: #b8bfd8;
 
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 28px;
+
 }
 
-.select-box {
-    width: 100%;
 
-    padding: 18px 20px;
+/* =====================================================
+                    BUTTON AREA
+===================================================== */
 
-    border-radius: 15px;
+.clear-actions {
 
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
 
-    background: rgba(255, 255, 255, 0.12);
+    gap: 12px;
 
-    color: white;
+    justify-content: center;
 
-    font-size: 16px;
-
-    outline: none;
 }
 
-.select-box option {
-    color: black;
-}
 
-/* Continue button */
-.continue-btn {
-    margin-top: 30px;
+/* COMMON BUTTON */
 
-    padding: 16px 30px;
+.clear-actions button {
 
     border: none;
-    border-radius: 30px;
 
-    background: white;
-    color: #6636b4;
+    padding:
+        13px 20px;
 
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
 }
 
-.continue-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+
+/* =====================================================
+                      CANCEL
+===================================================== */
+
+.cancel-clear {
+
+    color: #d7d9e5;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        ) !important;
+
 }
 
-/* Mobile */
-@media (max-width: 600px) {
 
-    .navbar {
-        padding: 18px 5%;
+/* =====================================================
+                  CONFIRM CLEAR
+===================================================== */
+
+.confirm-clear {
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d6d,
+            #ff1744
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            255,
+            23,
+            68,
+            0.25
+        );
+
+}
+
+
+/* =====================================================
+                      HOVER
+===================================================== */
+
+.clear-actions button:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.confirm-clear:hover {
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            255,
+            23,
+            68,
+            0.45
+        );
+
+}
+
+
+.cancel-clear:hover {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
+
+}
+
+
+/* =====================================================
+                     MOBILE
+===================================================== */
+
+@media (
+    max-width: 500px
+) {
+
+    .clear-modal-box {
+
+        padding:
+            30px 22px;
+
     }
 
-    .container {
-        margin: 40px auto;
+
+    .clear-modal-box h2 {
+
+        font-size:
+            22px;
+
     }
 
-    .card {
-        padding: 30px 22px;
-        border-radius: 22px;
+
+    .clear-actions {
+
+        flex-direction:
+            column;
+
     }
 
-    h1 {
-        font-size: 42px;
+
+    .clear-actions button {
+
+        width:
+            100%;
+
     }
+
 }
