@@ -7,7 +7,6 @@
 
     <title>Smart Estate | AI Flat Price Predictor</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,8 +29,8 @@
     </nav>
 
 
-    <!-- Main Section -->
-    <main class="container">
+    <!-- STEP 01 -->
+    <main class="container" id="step1">
 
         <section class="card">
 
@@ -50,8 +49,6 @@
                 and enter separate details for every flat.
             </p>
 
-
-            <!-- Flat Selection -->
             <div class="selection">
 
                 <label for="flatNumber">
@@ -64,57 +61,23 @@
                         Select number of flats
                     </option>
 
-                    <option value="1">
-                        1 Flat
-                    </option>
-
-                    <option value="2">
-                        2 Flats
-                    </option>
-
-                    <option value="3">
-                        3 Flats
-                    </option>
-
-                    <option value="4">
-                        4 Flats
-                    </option>
-
-                    <option value="5">
-                        5 Flats
-                    </option>
-
-                    <option value="6">
-                        6 Flats
-                    </option>
-
-                    <option value="7">
-                        7 Flats
-                    </option>
-
-                    <option value="8">
-                        8 Flats
-                    </option>
-
-                    <option value="9">
-                        9 Flats
-                    </option>
-
-                    <option value="10">
-                        10 Flats
-                    </option>
+                    <option value="1">1 Flat</option>
+                    <option value="2">2 Flats</option>
+                    <option value="3">3 Flats</option>
+                    <option value="4">4 Flats</option>
+                    <option value="5">5 Flats</option>
+                    <option value="6">6 Flats</option>
+                    <option value="7">7 Flats</option>
+                    <option value="8">8 Flats</option>
+                    <option value="9">9 Flats</option>
+                    <option value="10">10 Flats</option>
 
                 </select>
 
             </div>
 
-
-            <!-- Continue -->
             <button class="continue-btn" onclick="startEstimation()">
-
-                Continue
-                →
-
+                Continue →
             </button>
 
         </section>
@@ -122,27 +85,244 @@
     </main>
 
 
-    <!-- JavaScript -->
+    <!-- STEP 02 -->
+    <main class="container" id="step2" style="display: none;">
+
+        <section class="card">
+
+            <div class="step">
+                02
+            </div>
+
+            <h1>
+                PROPERTY<br>
+                DETAILS
+            </h1>
+
+            <p class="subtitle">
+                Enter the details of each flat you want to evaluate.
+            </p>
+
+            <!-- Flats will be created here -->
+            <div id="flatForms"></div>
+
+            <button class="continue-btn" onclick="predictPrices()">
+                Predict Prices →
+            </button>
+
+            <button
+                class="history-btn"
+                style="margin-left: 10px;"
+                onclick="goBack()">
+                ← Back
+            </button>
+
+        </section>
+
+    </main>
+
+
     <script>
+
+        /* STEP 01 → STEP 02 */
 
         function startEstimation() {
 
-            const flats =
+            const numberOfFlats =
                 document.getElementById("flatNumber").value;
 
-            if (flats === "") {
+            if (numberOfFlats === "") {
 
                 alert("Please select the number of flats.");
 
                 return;
             }
 
-            alert(
-                "You selected " +
-                flats +
-                " flat(s)."
-            );
+            createFlatForms(numberOfFlats);
 
+            document.getElementById("step1").style.display = "none";
+
+            document.getElementById("step2").style.display = "block";
+        }
+
+
+        /* Create separate form for every flat */
+
+        function createFlatForms(numberOfFlats) {
+
+            const container =
+                document.getElementById("flatForms");
+
+            container.innerHTML = "";
+
+
+            for (let i = 1; i <= numberOfFlats; i++) {
+
+                const flat = document.createElement("div");
+
+                flat.className = "flat-form";
+
+                flat.innerHTML = `
+
+                    <h2>FLAT ${String(i).padStart(2, "0")}</h2>
+
+                    <!-- Area -->
+
+                    <label>
+                        Area (sq ft)
+                    </label>
+
+                    <input
+                        type="number"
+                        class="property-input"
+                        id="area-${i}"
+                        placeholder="Enter area in sq ft..."
+                        min="1"
+                    >
+
+
+                    <!-- Facing -->
+
+                    <label>
+                        Facing Direction
+                    </label>
+
+                    <select
+                        class="select-box property-input"
+                        id="facing-${i}">
+
+                        <option value="">
+                            Select facing direction
+                        </option>
+
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+
+                    </select>
+
+
+                    <!-- Floor -->
+
+                    <label>
+                        Floor Number
+                    </label>
+
+                    <select
+                        class="select-box property-input"
+                        id="floor-${i}">
+
+                        <option value="">
+                            Select floor
+                        </option>
+
+                        <option value="0">Ground Floor</option>
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+
+                    </select>
+
+
+                    <!-- Parking -->
+
+                    <label>
+                        Car Parking Size (sq ft)
+                    </label>
+
+                    <input
+                        type="number"
+                        class="property-input"
+                        id="parking-${i}"
+                        placeholder="Enter parking size..."
+                        min="0"
+                    >
+
+
+                    <!-- Bedrooms -->
+
+                    <label>
+                        Number of Bedrooms
+                    </label>
+
+                    <select
+                        class="select-box property-input"
+                        id="bedrooms-${i}">
+
+                        <option value="">
+                            Select bedrooms
+                        </option>
+
+                        <option value="1">1 Bedroom</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3 Bedrooms</option>
+                        <option value="4">4 Bedrooms</option>
+                        <option value="5">5 Bedrooms</option>
+                        <option value="6">6 Bedrooms</option>
+                        <option value="7">7 Bedrooms</option>
+                        <option value="8">8 Bedrooms</option>
+                        <option value="9">9 Bedrooms</option>
+                        <option value="10">10 Bedrooms</option>
+
+                    </select>
+
+                `;
+
+                container.appendChild(flat);
+            }
+        }
+
+
+        /* Back button */
+
+        function goBack() {
+
+            document.getElementById("step2").style.display = "none";
+
+            document.getElementById("step1").style.display = "block";
+        }
+
+
+        /* Temporary prediction function */
+
+        function predictPrices() {
+
+            alert(
+                "Property details received!\\n\\n" +
+                "The AI prediction model will be connected in the next step."
+            );
         }
 
     </script>
