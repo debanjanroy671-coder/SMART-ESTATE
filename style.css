@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Background */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Light blur layer */
+.background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(70, 35, 120, 0.45);
+    backdrop-filter: blur(5px);
+}
+
+/* Navigation */
+.navbar {
+    width: 100%;
+    padding: 22px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.history-btn {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    padding: 11px 18px;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.history-btn:hover {
+    background: white;
+    color: #6d3fc0;
+    transform: translateY(-2px);
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 80px auto;
+}
+
+/* Glass card */
+.card {
+    padding: 55px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Step number */
+.step {
+    color: #e1d2ff;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* Heading */
+h1 {
+    margin-top: 15px;
+
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.05;
+}
+
+.subtitle {
+    margin-top: 20px;
+
+    max-width: 650px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* Selection box */
+.selection {
+    margin-top: 40px;
+}
+
+.selection label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.select-box {
+    width: 100%;
+
+    padding: 18px 20px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.select-box option {
+    color: black;
+}
+
+/* Continue button */
+.continue-btn {
+    margin-top: 30px;
+
+    padding: 16px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: white;
+    color: #6636b4;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.continue-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .container {
+        margin: 40px auto;
+    }
+
+    .card {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+}
