@@ -1,5 +1,6 @@
 /* =====================================================
-   SMART ESTATE - MAIN STYLESHEET
+   SMART ESTATE
+   COMPLETE STYLE.CSS
 ===================================================== */
 
 * {
@@ -17,9 +18,22 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
     background:
-        radial-gradient(circle at top left, rgba(91, 61, 245, 0.25), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(8, 174, 234, 0.18), transparent 35%),
-        linear-gradient(135deg, #070b1d, #0d1230 50%, #090d24);
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(99, 72, 255, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(8, 174, 234, 0.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #050817 0%,
+            #0b1029 50%,
+            #080c20 100%
+        );
 }
 
 
@@ -29,35 +43,50 @@ body {
 
 .navbar {
     width: 100%;
-    min-height: 75px;
+    min-height: 72px;
+
     padding: 0 6%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(8, 13, 38, 0.82);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(6, 10, 30, 0.88);
 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     position: sticky;
     top: 0;
+
     z-index: 1000;
 }
 
 .logo {
+    color: #ffffff;
+
     font-size: 22px;
     font-weight: 800;
+
     letter-spacing: 0.3px;
 }
 
 .history-btn {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.07);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
     color: #ffffff;
 
+    background:
+        rgba(255, 255, 255, 0.07);
+
     padding: 11px 18px;
+
     border-radius: 12px;
 
     font-size: 14px;
@@ -73,8 +102,13 @@ body {
 
 .history-btn:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
 }
 
 
@@ -83,9 +117,14 @@ body {
 ===================================================== */
 
 .container {
-    width: min(1100px, calc(100% - 40px));
+    width: min(
+        1100px,
+        calc(100% - 40px)
+    );
+
     margin: 0 auto;
-    padding: 80px 0;
+
+    padding: 70px 0;
 }
 
 
@@ -95,24 +134,28 @@ body {
 
 .step-section {
     width: 100%;
+
     padding: 50px;
+
+    border-radius: 28px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(20, 27, 63, 0.92),
-            rgba(17, 18, 53, 0.92)
+            rgba(18, 27, 61, 0.96),
+            rgba(17, 18, 51, 0.96)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 28px;
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.35),
-        0 0 45px rgba(86, 64, 255, 0.08);
+        0 30px 90px
+        rgba(0, 0, 0, 0.38),
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+        0 0 50px
+        rgba(99, 72, 255, 0.08);
 }
 
 
@@ -124,17 +167,24 @@ body {
     display: inline-block;
 
     padding: 8px 14px;
+
     margin-bottom: 18px;
 
     border-radius: 30px;
 
-    color: #9b8cff;
+    color: #a596ff;
 
-    background: rgba(113, 75, 255, 0.12);
-    border: 1px solid rgba(113, 75, 255, 0.25);
+    background:
+        rgba(109, 61, 245, 0.13);
+
+    border:
+        1px solid
+        rgba(109, 61, 245, 0.25);
 
     font-size: 12px;
+
     font-weight: 800;
+
     letter-spacing: 2px;
 }
 
@@ -144,28 +194,41 @@ body {
 ===================================================== */
 
 .step-section h1 {
-    font-size: clamp(30px, 5vw, 48px);
+    margin-bottom: 16px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(30px, 5vw, 48px);
+
     line-height: 1.15;
-    margin-bottom: 15px;
+
+    font-weight: 800;
 
     background:
         linear-gradient(
             90deg,
             #ffffff,
-            #bdb5ff,
-            #78dfff
+            #c3bcff,
+            #79dcff
         );
 
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+
+    -webkit-text-fill-color: transparent;
 }
 
 .step-section > p {
-    color: #aeb6d0;
-    font-size: 16px;
-    line-height: 1.7;
+    max-width: 800px;
+
     margin-bottom: 35px;
+
+    color: #aeb6d0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
 }
 
 
@@ -174,10 +237,13 @@ body {
 ===================================================== */
 
 .flat-selection {
-    display: flex;
-    gap: 14px;
-    align-items: center;
     max-width: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
 }
 
 .flat-selection select {
@@ -186,22 +252,29 @@ body {
 
 
 /* =====================================================
-   SELECT / INPUT
+   INPUTS
 ===================================================== */
 
-select,
-input {
+input,
+select {
     width: 100%;
 
     padding: 14px 16px;
 
     color: #ffffff;
-    background: #111936;
 
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background:
+        #111936;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
     border-radius: 12px;
 
     outline: none;
+
+    font-family: inherit;
 
     font-size: 14px;
 
@@ -210,12 +283,17 @@ input {
         box-shadow 0.2s ease;
 }
 
-select:focus,
-input:focus {
+input::placeholder {
+    color: #6f7895;
+}
+
+input:focus,
+select:focus {
     border-color: #7561ff;
 
     box-shadow:
-        0 0 0 3px rgba(117, 97, 255, 0.13);
+        0 0 0 3px
+        rgba(117, 97, 255, 0.13);
 }
 
 select option {
@@ -225,7 +303,7 @@ select option {
 
 
 /* =====================================================
-   GENERAL BUTTONS
+   GENERAL BUTTON
 ===================================================== */
 
 button {
@@ -234,9 +312,9 @@ button {
 
 .flat-selection button,
 .buttons button {
-    border: none;
-
     padding: 14px 22px;
+
+    border: none;
 
     border-radius: 12px;
 
@@ -250,12 +328,14 @@ button {
         );
 
     font-size: 14px;
+
     font-weight: 700;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px rgba(86, 65, 255, 0.22);
+        0 10px 30px
+        rgba(86, 65, 255, 0.22);
 
     transition:
         transform 0.2s ease,
@@ -267,7 +347,8 @@ button {
     transform: translateY(-3px);
 
     box-shadow:
-        0 15px 35px rgba(86, 65, 255, 0.35);
+        0 15px 40px
+        rgba(86, 65, 255, 0.35);
 }
 
 
@@ -277,7 +358,9 @@ button {
 
 #flatForms {
     display: grid;
+
     gap: 20px;
+
     margin-bottom: 30px;
 }
 
@@ -289,7 +372,9 @@ button {
     background:
         rgba(255, 255, 255, 0.045);
 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
 
     transition:
         border-color 0.2s ease,
@@ -297,15 +382,20 @@ button {
 }
 
 .flat-form:hover {
-    border-color: rgba(117, 97, 255, 0.35);
     transform: translateY(-2px);
+
+    border-color:
+        rgba(117, 97, 255, 0.35);
 }
 
 .flat-form h2 {
     margin-bottom: 22px;
 
-    font-size: 20px;
     color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
 }
 
 
@@ -317,21 +407,27 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
     gap: 18px;
 }
 
 .form-group {
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
 }
 
 .form-group label {
-    color: #bfc6df;
+    color: #bec6df;
 
     font-size: 13px;
+
     font-weight: 600;
 }
 
@@ -342,33 +438,43 @@ button {
 
 .buttons {
     display: flex;
+
     justify-content: space-between;
+
     gap: 15px;
+
     margin-top: 25px;
 }
 
 .buttons button:first-child {
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
 
     box-shadow: none;
 }
 
 .buttons button:first-child:hover {
-    background: rgba(255, 255, 255, 0.13);
+    background:
+        rgba(255, 255, 255, 0.13);
 }
 
 
 /* =====================================================
-   RESULT CARDS
+   RESULT SECTION
 ===================================================== */
 
 #resultCards {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
 
     gap: 20px;
 
@@ -389,38 +495,44 @@ button {
             rgba(14, 171, 234, 0.08)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.25);
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
 }
 
 .result-flat {
+    margin-bottom: 12px;
+
     color: #b7c0db;
 
     font-size: 14px;
-    margin-bottom: 12px;
 }
 
 .result-price {
-    font-size: 32px;
-    font-weight: 800;
+    margin-bottom: 8px;
 
     color: #ffffff;
 
-    margin-bottom: 8px;
+    font-size: 32px;
+
+    font-weight: 800;
 }
 
 .result-unit {
     color: #8f7cff;
 
     font-size: 13px;
+
     font-weight: 600;
 }
 
 
 /* =====================================================
-   PREDICTION HISTORY MODAL
+   HISTORY MODAL
 ===================================================== */
 
 .history-modal {
@@ -435,12 +547,14 @@ button {
 
     padding: 20px;
 
-    background: rgba(3, 8, 30, 0.82);
+    background:
+        rgba(3, 8, 30, 0.82);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
@@ -452,15 +566,28 @@ button {
 
 .history-modal.active {
     opacity: 1;
+
     visibility: visible;
 }
 
+
+/* =====================================================
+   HISTORY BOX
+===================================================== */
+
 .history-box {
-    width: min(700px, 100%);
+    width: min(
+        700px,
+        100%
+    );
+
     max-height: 85vh;
 
     display: flex;
+
     flex-direction: column;
+
+    overflow: hidden;
 
     border-radius: 24px;
 
@@ -471,10 +598,13 @@ button {
             #181348
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
 
     box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.55);
+        0 30px 90px
+        rgba(0, 0, 0, 0.55);
 }
 
 
@@ -485,21 +615,25 @@ button {
 .history-header {
     display: flex;
 
-    justify-content: space-between;
     align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
 
     padding: 25px 28px;
 
     border-bottom:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid
+        rgba(255, 255, 255, 0.09);
 }
 
 .history-header h2 {
+    margin-bottom: 7px;
+
     color: #ffffff;
 
     font-size: 22px;
-
-    margin-bottom: 7px;
 }
 
 .history-header p {
@@ -510,23 +644,31 @@ button {
 
 .history-close {
     width: 38px;
+
     height: 38px;
 
+    flex-shrink: 0;
+
     border: none;
+
     border-radius: 10px;
 
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(255, 255, 255, 0.08);
 
     cursor: pointer;
 
     font-size: 16px;
 
-    transition: background 0.2s ease;
+    transition:
+        background 0.2s ease;
 }
 
 .history-close:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background:
+        rgba(255, 255, 255, 0.15);
 }
 
 
@@ -547,17 +689,22 @@ button {
 
     border-radius: 16px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        rgba(255, 255, 255, 0.045);
 
     border:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid
+        rgba(255, 255, 255, 0.09);
 }
 
 .history-session-header {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
+
+    gap: 12px;
 
     margin-bottom: 15px;
 }
@@ -580,25 +727,31 @@ button {
     color: #9b8cff;
 
     font-size: 12px;
+
     font-weight: 700;
 }
 
 .history-flats {
     display: grid;
+
     gap: 9px;
 }
 
 .history-item {
     display: flex;
 
-    justify-content: space-between;
     align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
 
     padding: 12px 14px;
 
     border-radius: 10px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        rgba(255, 255, 255, 0.045);
 }
 
 .history-flat {
@@ -611,6 +764,7 @@ button {
     color: #ffffff;
 
     font-size: 14px;
+
     font-weight: 700;
 }
 
@@ -620,21 +774,21 @@ button {
 ===================================================== */
 
 .empty-history {
-    text-align: center;
-
     padding: 50px 20px;
+
+    text-align: center;
 }
 
 .empty-icon {
-    font-size: 42px;
-
     margin-bottom: 15px;
+
+    font-size: 42px;
 }
 
 .empty-history h3 {
-    color: #ffffff;
-
     margin-bottom: 8px;
+
+    color: #ffffff;
 }
 
 .empty-history p {
@@ -658,7 +812,8 @@ button {
     padding: 20px 28px;
 
     border-top:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid
+        rgba(255, 255, 255, 0.09);
 }
 
 .history-footer button {
@@ -666,17 +821,18 @@ button {
 
     border-radius: 11px;
 
-    border: none;
-
     color: #ffffff;
 
     font-size: 13px;
+
     font-weight: 600;
 
     cursor: pointer;
 }
 
 .history-clear {
+    border: none;
+
     background:
         linear-gradient(
             135deg,
@@ -686,10 +842,12 @@ button {
 }
 
 .history-done {
-    background: rgba(255, 255, 255, 0.08);
-
     border:
-        1px solid rgba(255, 255, 255, 0.12) !important;
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.08);
 }
 
 
@@ -705,14 +863,20 @@ button {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    background: rgba(3, 8, 30, 0.80);
+    padding: 20px;
+
+    background:
+        rgba(3, 8, 30, 0.80);
 
     backdrop-filter: blur(12px);
+
     -webkit-backdrop-filter: blur(12px);
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
@@ -724,6 +888,7 @@ button {
 
 .clear-modal.active {
     opacity: 1;
+
     visibility: visible;
 }
 
@@ -783,6 +948,7 @@ button {
 
 .ai-icon {
     width: 75px;
+
     height: 75px;
 
     margin:
@@ -791,6 +957,7 @@ button {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
@@ -845,6 +1012,7 @@ button {
     color: #ffffff;
 
     font-size: 25px;
+
     font-weight: 700;
 }
 
@@ -855,6 +1023,7 @@ button {
     color: #8f7cff;
 
     font-size: 13px;
+
     font-weight: 700;
 
     letter-spacing: 1.5px;
@@ -894,6 +1063,7 @@ button {
     border-radius: 12px;
 
     font-size: 14px;
+
     font-weight: 600;
 
     cursor: pointer;
@@ -972,7 +1142,7 @@ button {
 
 
 /* =====================================================
-   MOBILE
+   MOBILE RESPONSIVE
 ===================================================== */
 
 @media (max-width: 700px) {
@@ -987,20 +1157,22 @@ button {
 
     .history-btn {
         padding: 9px 12px;
+
         font-size: 12px;
     }
 
     .container {
-        width: min(
-            100% - 24px,
-            1100px
-        );
+        width:
+            calc(100% - 24px);
 
-        padding: 35px 0;
+        padding:
+            35px 0;
     }
 
     .step-section {
-        padding: 28px 20px;
+        padding:
+            30px 20px;
+
         border-radius: 20px;
     }
 
@@ -1010,7 +1182,12 @@ button {
 
     .flat-selection {
         flex-direction: column;
+
         align-items: stretch;
+    }
+
+    .flat-selection button {
+        width: 100%;
     }
 
     .form-grid {
@@ -1038,11 +1215,14 @@ button {
 
     .history-session-header {
         align-items: flex-start;
-        gap: 10px;
     }
 
-    .history-item {
-        gap: 10px;
+    .history-footer {
+        flex-direction: column;
+    }
+
+    .history-footer button {
+        width: 100%;
     }
 
     .clear-modal-box {
@@ -1060,6 +1240,42 @@ button {
 
     .clear-actions button {
         width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        padding: 0 14px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .history-btn {
+        padding: 8px 10px;
+
+        font-size: 11px;
+    }
+
+    .step-section {
+        padding:
+            24px 16px;
+    }
+
+    .step-section h1 {
+        font-size: 27px;
+    }
+
+    .flat-form {
+        padding: 20px 16px;
     }
 
 }
