@@ -9,7 +9,6 @@
 
     <title>Smart Estate | AI Flat Price Predictor</title>
 
-    <!-- GitHub Pages CSS -->
     <link rel="stylesheet" href="./style.css?v=15">
 
 </head>
@@ -215,8 +214,6 @@
     <div class="history-box">
 
 
-        <!-- HEADER -->
-
         <div class="history-header">
 
             <div>
@@ -245,8 +242,6 @@
 
 
 
-        <!-- CONTENT -->
-
         <div
             id="historyContent"
             class="history-content">
@@ -254,8 +249,6 @@
         </div>
 
 
-
-        <!-- FOOTER -->
 
         <div class="history-footer">
 
@@ -297,8 +290,6 @@
 
     <div class="clear-modal-box">
 
-
-        <!-- AI ICON -->
 
         <div class="ai-icon">
 
@@ -422,8 +413,6 @@ function createFlatForms(count) {
             "flat-form";
 
 
-        /* FLOOR OPTIONS */
-
         let floorOptions =
             `<option value="0">Ground</option>`;
 
@@ -441,8 +430,6 @@ function createFlatForms(count) {
 
         }
 
-
-        /* BEDROOM OPTIONS */
 
         let bedroomOptions = "";
 
@@ -687,9 +674,13 @@ async function predictPrices() {
             }
 
 
+            /* =================================================
+                  CONNECT TO RENDER FLASK BACKEND
+            ================================================= */
+
             const response =
                 await fetch(
-                    "/predict",
+                    "https://smart-estate-api-r22u.onrender.com/predict",
                     {
 
                         method: "POST",
@@ -731,6 +722,18 @@ async function predictPrices() {
 
                     }
                 );
+
+
+            /* CHECK RESPONSE */
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Server Error: " +
+                    response.status
+                );
+
+            }
 
 
             const result =
@@ -897,6 +900,7 @@ async function predictPrices() {
     catch (error) {
 
         console.error(
+            "Prediction Error:",
             error
         );
 
