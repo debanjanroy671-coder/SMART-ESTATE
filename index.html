@@ -16,7 +16,7 @@
 
     <link
         rel="stylesheet"
-        href="./style.css?v=17"
+        href="./style.css?v=18"
     >
 
 </head>
@@ -26,40 +26,41 @@
 
 
 <!-- =====================================================
-                         NAVBAR
+     NAVBAR
 ===================================================== -->
 
 <nav class="navbar">
 
     <div class="logo">
-        🏠 Smart Estate
+        🏠 Smart <span>Estate</span>
     </div>
-
 
     <button
         type="button"
         class="history-btn"
         onclick="showHistory()"
     >
-
         🕘 Prediction History
-
     </button>
 
 </nav>
 
 
 
+<!-- =====================================================
+     MAIN CONTAINER
+===================================================== -->
+
 <main class="container">
 
 
 <!-- =====================================================
-                       STEP 01
+     STEP 1 — HOME / HERO
 ===================================================== -->
 
 <section
     id="step1"
-    class="step-section"
+    class="step-section active"
 >
 
 
@@ -76,67 +77,44 @@
 
 
     <p>
-        Estimate the value of your flat using
-        AI-powered machine learning technology.
-        Enter your property details and get an
-        instant estimated price.
+        Predict your flat's market price using
+        AI-powered property analysis.
+        Get fast, smart and reliable estimates
+        based on your property details.
     </p>
 
 
+
     <!-- =================================================
-                       HERO IMAGE
-    ================================================= -->
+         PROPERTY IMAGE
+    ================================================== -->
 
     <div
         style="
-            width:100%;
-            height:240px;
-            margin:25px 0 30px;
-            border-radius:22px;
-            overflow:hidden;
-            position:relative;
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: 26px;
+            overflow: hidden;
             background-image:
-            url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85');
-            background-size:cover;
-            background-position:center;
-            box-shadow:
-            0 18px 45px
-            rgba(35,60,110,0.14);
+                url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85');
+            background-size: cover;
+            background-position: center;
         "
     >
 
         <div
             style="
-                position:absolute;
-                inset:0;
+                position: absolute;
+                inset: 0;
                 background:
-                linear-gradient(
-                    90deg,
-                    rgba(20,35,65,0.48),
-                    rgba(20,35,65,0.04)
-                );
-            "
-        ></div>
-
-
-        <div
-            style="
-                position:absolute;
-                left:25px;
-                bottom:22px;
-                color:white;
-                font-size:13px;
-                font-weight:700;
-                background:
-                rgba(20,35,65,0.72);
-                padding:10px 15px;
-                border-radius:30px;
-                backdrop-filter:blur(10px);
+                    linear-gradient(
+                        90deg,
+                        rgba(20, 30, 70, 0.30),
+                        rgba(99, 91, 255, 0.05)
+                    );
             "
         >
-
-            🏡 Find Your Property Value
-
         </div>
 
     </div>
@@ -144,44 +122,14 @@
 
 
     <!-- =================================================
-                    PROPERTY SELECTION
-    ================================================= -->
+         PROPERTY SELECTION
+    ================================================== -->
 
-    <div
-        style="
-            display:flex;
-            align-items:center;
-            gap:12px;
-            margin-bottom:12px;
-            color:#172440;
-            font-size:18px;
-            font-weight:800;
-        "
-    >
+    <div>
 
-        🏢
-
-        <span>
+        <label for="flatCount">
             How many flats do you want to estimate?
-        </span>
-
-    </div>
-
-
-    <p
-        style="
-            margin-bottom:18px;
-            font-size:13px;
-        "
-    >
-
-        Select the number of properties you want
-        to evaluate.
-
-    </p>
-
-
-    <div class="flat-selection">
+        </label>
 
 
         <select id="flatCount">
@@ -233,9 +181,7 @@
             type="button"
             onclick="startEstimation()"
         >
-
             Start Estimation →
-
         </button>
 
     </div>
@@ -243,141 +189,50 @@
 
 
     <!-- =================================================
-                       FEATURES
-    ================================================= -->
+         FEATURE CARDS
+    ================================================== -->
 
-    <div
-        style="
-            display:grid;
-            grid-template-columns:
-            repeat(3,1fr);
-            gap:14px;
-            margin-top:30px;
-        "
-    >
+    <div>
 
 
-        <div
-            style="
-                padding:17px;
-                border-radius:16px;
-                background:#f7f9ff;
-                border:1px solid
-                rgba(40,70,120,0.09);
-            "
-        >
+        <div>
 
-            <div
-                style="
-                    font-size:22px;
-                    margin-bottom:7px;
-                "
-            >
-                🤖
-            </div>
+            <h3>
+                🤖 AI Powered
+            </h3>
 
-            <strong
-                style="
-                    color:#172440;
-                    font-size:13px;
-                "
-            >
-                AI Powered
-            </strong>
-
-            <div
-                style="
-                    color:#7a879e;
-                    font-size:11px;
-                    margin-top:5px;
-                "
-            >
-                Smart prediction
-            </div>
+            <p>
+                Smart machine learning model
+                estimates your property value.
+            </p>
 
         </div>
 
 
+        <div>
 
-        <div
-            style="
-                padding:17px;
-                border-radius:16px;
-                background:#f7f9ff;
-                border:1px solid
-                rgba(40,70,120,0.09);
-            "
-        >
+            <h3>
+                ⚡ Instant Result
+            </h3>
 
-            <div
-                style="
-                    font-size:22px;
-                    margin-bottom:7px;
-                "
-            >
-                ⚡
-            </div>
-
-            <strong
-                style="
-                    color:#172440;
-                    font-size:13px;
-                "
-            >
-                Instant Result
-            </strong>
-
-            <div
-                style="
-                    color:#7a879e;
-                    font-size:11px;
-                    margin-top:5px;
-                "
-            >
-                Fast estimation
-            </div>
+            <p>
+                Get your estimated flat price
+                within seconds.
+            </p>
 
         </div>
 
 
+        <div>
 
-        <div
-            style="
-                padding:17px;
-                border-radius:16px;
-                background:#f7f9ff;
-                border:1px solid
-                rgba(40,70,120,0.09);
-            "
-        >
+            <h3>
+                🔒 Private
+            </h3>
 
-            <div
-                style="
-                    font-size:22px;
-                    margin-bottom:7px;
-                "
-            >
-                🔒
-            </div>
-
-            <strong
-                style="
-                    color:#172440;
-                    font-size:13px;
-                "
-            >
-                Private
-            </strong>
-
-            <div
-                style="
-                    color:#7a879e;
-                    font-size:11px;
-                    margin-top:5px;
-                "
-            >
-                Secure experience
-            </div>
+            <p>
+                Your property information
+                stays secure.
+            </p>
 
         </div>
 
@@ -390,45 +245,47 @@
 
 
 <!-- =====================================================
-                       STEP 02
+     STEP 2 — PROPERTY DETAILS
 ===================================================== -->
 
 <section
     id="step2"
     class="step-section"
-    style="display:none;"
 >
 
 
     <div class="step-number">
-        STEP 02
+        STEP 2
     </div>
 
 
-    <h1>
-        Enter Flat Details
-    </h1>
+    <h2>
+        Enter Property Details
+    </h2>
 
 
     <p>
-        Provide property details to get an
-        AI-powered price prediction.
+        Provide the details of each flat
+        to generate an AI price prediction.
     </p>
 
 
-    <div id="flatForms"></div>
+    <div id="flatForms">
+    </div>
 
+
+
+    <!-- =================================================
+         BUTTONS
+    ================================================== -->
 
     <div class="buttons">
-
 
         <button
             type="button"
             onclick="goBack()"
         >
-
             ← Back
-
         </button>
 
 
@@ -436,11 +293,8 @@
             type="button"
             onclick="predictPrices()"
         >
-
-            Predict Prices →
-
+            🤖 Predict Prices
         </button>
-
 
     </div>
 
@@ -450,45 +304,43 @@
 
 
 <!-- =====================================================
-                     RESULT SECTION
+     RESULT SECTION
 ===================================================== -->
 
 <section
     id="resultSection"
     class="step-section"
-    style="display:none;"
 >
 
 
     <div class="step-number">
-        🤖 AI RESULT
+        AI RESULT
     </div>
 
 
-    <h1>
-        Prediction Complete 🎉
-    </h1>
+    <h2>
+        Your Property Estimate
+    </h2>
 
 
     <p>
-        Here is the estimated property price
-        generated by the AI model.
+        Here is the estimated market price
+        generated by our AI model.
     </p>
 
 
-    <div id="resultCards"></div>
+    <div id="results">
+    </div>
+
 
 
     <div class="buttons">
-
 
         <button
             type="button"
             onclick="backToDetails()"
         >
-
             ← Edit Details
-
         </button>
 
 
@@ -496,23 +348,21 @@
             type="button"
             onclick="startNewPrediction()"
         >
-
-            New Prediction →
-
+            ✨ New Prediction
         </button>
-
 
     </div>
 
 
 </section>
 
+
 </main>
 
 
 
 <!-- =====================================================
-                  PREDICTION HISTORY MODAL
+     HISTORY MODAL
 ===================================================== -->
 
 <div
@@ -521,23 +371,22 @@
 >
 
 
-    <div class="history-box">
+    <div class="history-content">
 
 
-        <div class="history-header">
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                gap:15px;
+                margin-bottom:20px;
+            "
+        >
 
-
-            <div>
-
-                <h2>
-                    🕘 Prediction History
-                </h2>
-
-                <p>
-                    Your previous AI property estimates
-                </p>
-
-            </div>
+            <h2>
+                🕘 Prediction History
+            </h2>
 
 
             <button
@@ -545,47 +394,31 @@
                 class="history-close"
                 onclick="closeHistory()"
             >
-
-                ✕
-
+                ×
             </button>
-
 
         </div>
 
 
+        <div id="historyList">
+        </div>
+
 
         <div
-            id="historyContent"
-            class="history-content"
-        ></div>
-
-
-
-        <div class="history-footer">
-
+            style="
+                display:flex;
+                justify-content:flex-end;
+                margin-top:20px;
+            "
+        >
 
             <button
                 type="button"
-                class="history-clear"
+                class="confirm-clear"
                 onclick="clearHistory()"
             >
-
                 🗑 Clear History
-
             </button>
-
-
-            <button
-                type="button"
-                class="history-done"
-                onclick="closeHistory()"
-            >
-
-                Done
-
-            </button>
-
 
         </div>
 
@@ -597,7 +430,7 @@
 
 
 <!-- =====================================================
-                    CLEAR HISTORY MODAL
+     CLEAR HISTORY CONFIRMATION MODAL
 ===================================================== -->
 
 <div
@@ -606,42 +439,60 @@
 >
 
 
-    <div class="clear-modal-box">
+    <div class="clear-content">
 
 
-        <div class="ai-icon">
-            🗑️
-        </div>
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                gap:15px;
+            "
+        >
 
-
-        <h2>
-            Clear Prediction History?
-        </h2>
-
-
-        <p>
-            AI HISTORY MANAGEMENT
-        </p>
-
-
-        <span>
-            This will permanently remove all
-            saved prediction sessions from
-            this browser.
-        </span>
-
-
-        <div class="clear-actions">
+            <h2>
+                Clear History?
+            </h2>
 
 
             <button
                 type="button"
-                class="cancel-clear"
+                class="clear-close"
                 onclick="closeClearModal()"
             >
+                ×
+            </button>
 
+        </div>
+
+
+        <p
+            style="
+                color:#667085;
+                line-height:1.6;
+                margin-bottom:20px;
+            "
+        >
+            Are you sure you want to delete
+            all prediction history?
+        </p>
+
+
+        <div
+            style="
+                display:flex;
+                justify-content:flex-end;
+                gap:10px;
+            "
+        >
+
+            <button
+                type="button"
+                class="history-btn"
+                onclick="closeClearModal()"
+            >
                 Cancel
-
             </button>
 
 
@@ -650,11 +501,8 @@
                 class="confirm-clear"
                 onclick="confirmClearHistory()"
             >
-
                 🗑 Clear History
-
             </button>
-
 
         </div>
 
@@ -666,39 +514,42 @@
 
 
 <!-- =====================================================
-                         JAVASCRIPT
+     JAVASCRIPT
 ===================================================== -->
 
 <script>
 
 
 /* =====================================================
-                  START ESTIMATION
+   GLOBAL VARIABLES
+===================================================== */
+
+let flatCount = 1;
+
+
+/* =====================================================
+   START ESTIMATION
 ===================================================== */
 
 function startEstimation() {
 
-    const count =
+    flatCount =
         parseInt(
-            document.getElementById(
-                "flatCount"
-            ).value
+            document.getElementById("flatCount").value
         );
 
 
-    createFlatForms(
-        count
-    );
+    createFlatForms();
 
 
-    document.getElementById(
-        "step1"
-    ).style.display = "none";
+    document
+        .getElementById("step1")
+        .classList.remove("active");
 
 
-    document.getElementById(
-        "step2"
-    ).style.display = "block";
+    document
+        .getElementById("step2")
+        .classList.add("active");
 
 
     window.scrollTo({
@@ -711,17 +562,13 @@ function startEstimation() {
 
 
 /* =====================================================
-                  CREATE FLAT FORMS
+   CREATE FLAT FORMS
 ===================================================== */
 
-function createFlatForms(
-    count
-) {
+function createFlatForms() {
 
     const container =
-        document.getElementById(
-            "flatForms"
-        );
+        document.getElementById("flatForms");
 
 
     container.innerHTML = "";
@@ -729,55 +576,13 @@ function createFlatForms(
 
     for (
         let i = 1;
-        i <= count;
+        i <= flatCount;
         i++
     ) {
 
 
-        let floorOptions = "";
-
-
-        floorOptions +=
-            `<option value="0">Ground</option>`;
-
-
-        for (
-            let floor = 1;
-            floor <= 30;
-            floor++
-        ) {
-
-            floorOptions +=
-                `<option value="${floor}">
-                    Floor ${floor}
-                </option>`;
-
-        }
-
-
-
-        let bedroomOptions = "";
-
-
-        for (
-            let bedroom = 1;
-            bedroom <= 6;
-            bedroom++
-        ) {
-
-            bedroomOptions +=
-                `<option value="${bedroom}">
-                    ${bedroom} Bedroom
-                </option>`;
-
-        }
-
-
-
         const form =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
 
         form.className =
@@ -786,9 +591,9 @@ function createFlatForms(
 
         form.innerHTML = `
 
-            <h2>
+            <h3>
                 🏠 Flat ${i}
-            </h2>
+            </h3>
 
 
             <div class="form-grid">
@@ -797,13 +602,13 @@ function createFlatForms(
                 <div class="form-group">
 
                     <label>
-                        Area (sq ft)
+                        Area (sqft)
                     </label>
 
                     <input
                         type="number"
-                        class="area"
-                        placeholder="e.g. 1500"
+                        id="area-${i}"
+                        placeholder="Example: 1200"
                         min="1"
                         required
                     >
@@ -815,10 +620,17 @@ function createFlatForms(
                 <div class="form-group">
 
                     <label>
-                        Facing Direction
+                        Facing
                     </label>
 
-                    <select class="facing">
+                    <select
+                        id="facing-${i}"
+                        required
+                    >
+
+                        <option value="">
+                            Select Facing
+                        </option>
 
                         <option value="North">
                             North
@@ -845,29 +657,13 @@ function createFlatForms(
                 <div class="form-group">
 
                     <label>
-                        Floor Number
-                    </label>
-
-                    <select class="floor">
-
-                        ${floorOptions}
-
-                    </select>
-
-                </div>
-
-
-
-                <div class="form-group">
-
-                    <label>
-                        Car Parking Size (sq ft)
+                        Floor
                     </label>
 
                     <input
                         type="number"
-                        class="parking"
-                        placeholder="e.g. 200"
+                        id="floor-${i}"
+                        placeholder="Example: 5"
                         min="0"
                         required
                     >
@@ -879,12 +675,55 @@ function createFlatForms(
                 <div class="form-group">
 
                     <label>
-                        Number of Bedrooms
+                        Parking (sqft)
                     </label>
 
-                    <select class="bedrooms">
+                    <input
+                        type="number"
+                        id="parking-${i}"
+                        placeholder="Example: 150"
+                        min="0"
+                        required
+                    >
 
-                        ${bedroomOptions}
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Bedrooms
+                    </label>
+
+                    <select
+                        id="bedrooms-${i}"
+                        required
+                    >
+
+                        <option value="">
+                            Select Bedrooms
+                        </option>
+
+                        <option value="1">
+                            1 BHK
+                        </option>
+
+                        <option value="2">
+                            2 BHK
+                        </option>
+
+                        <option value="3">
+                            3 BHK
+                        </option>
+
+                        <option value="4">
+                            4 BHK
+                        </option>
+
+                        <option value="5">
+                            5 BHK
+                        </option>
 
                     </select>
 
@@ -896,9 +735,7 @@ function createFlatForms(
         `;
 
 
-        container.appendChild(
-            form
-        );
+        container.appendChild(form);
 
     }
 
@@ -907,19 +744,19 @@ function createFlatForms(
 
 
 /* =====================================================
-                       GO BACK
+   GO BACK
 ===================================================== */
 
 function goBack() {
 
-    document.getElementById(
-        "step2"
-    ).style.display = "none";
+    document
+        .getElementById("step2")
+        .classList.remove("active");
 
 
-    document.getElementById(
-        "step1"
-    ).style.display = "block";
+    document
+        .getElementById("step1")
+        .classList.add("active");
 
 
     window.scrollTo({
@@ -932,31 +769,94 @@ function goBack() {
 
 
 /* =====================================================
-                    PREDICT PRICES
+   PREDICT PRICES
 ===================================================== */
 
 async function predictPrices() {
 
-    const flats =
-        document.querySelectorAll(
-            ".flat-form"
-        );
+
+    const properties = [];
 
 
-    if (
-        flats.length === 0
+    for (
+        let i = 1;
+        i <= flatCount;
+        i++
     ) {
 
-        alert(
-            "Please add at least one flat."
-        );
 
-        return;
+        const area =
+            document
+                .getElementById(`area-${i}`)
+                .value;
+
+
+        const facing =
+            document
+                .getElementById(`facing-${i}`)
+                .value;
+
+
+        const floor =
+            document
+                .getElementById(`floor-${i}`)
+                .value;
+
+
+        const parking =
+            document
+                .getElementById(`parking-${i}`)
+                .value;
+
+
+        const bedrooms =
+            document
+                .getElementById(`bedrooms-${i}`)
+                .value;
+
+
+
+        if (
+            !area ||
+            !facing ||
+            !floor ||
+            !parking ||
+            !bedrooms
+        ) {
+
+            alert(
+                `Please fill all details for Flat ${i}.`
+            );
+
+            return;
+        }
+
+
+
+        properties.push({
+
+            Area_sqft:
+                parseFloat(area),
+
+            Facing:
+                facing,
+
+            Floor:
+                parseInt(floor),
+
+            Parking_sqft:
+                parseFloat(parking),
+
+            Bedrooms:
+                parseInt(bedrooms)
+
+        });
 
     }
 
 
-    const predictions = [];
+
+    const results = [];
 
 
     try {
@@ -964,65 +864,10 @@ async function predictPrices() {
 
         for (
             let i = 0;
-            i < flats.length;
+            i < properties.length;
             i++
         ) {
 
-
-            const flat =
-                flats[i];
-
-
-            const area =
-                flat.querySelector(
-                    ".area"
-                ).value;
-
-
-            const facing =
-                flat.querySelector(
-                    ".facing"
-                ).value;
-
-
-            const floor =
-                flat.querySelector(
-                    ".floor"
-                ).value;
-
-
-            const parking =
-                flat.querySelector(
-                    ".parking"
-                ).value;
-
-
-            const bedrooms =
-                flat.querySelector(
-                    ".bedrooms"
-                ).value;
-
-
-
-            if (
-                !area ||
-                !parking
-            ) {
-
-                alert(
-                    "Please fill all details for Flat " +
-                    (i + 1)
-                );
-
-                return;
-
-            }
-
-
-
-            /* =================================================
-                       RENDER BACKEND API
-            ================================================= */
 
             const response =
                 await fetch(
@@ -1032,52 +877,20 @@ async function predictPrices() {
                         method: "POST",
 
                         headers: {
-
                             "Content-Type":
                                 "application/json"
-
                         },
 
                         body:
-                            JSON.stringify({
-
-                                Area_sqft:
-                                    parseFloat(
-                                        area
-                                    ),
-
-                                Facing:
-                                    facing,
-
-                                Floor:
-                                    parseInt(
-                                        floor
-                                    ),
-
-                                Parking_sqft:
-                                    parseFloat(
-                                        parking
-                                    ),
-
-                                Bedrooms:
-                                    parseInt(
-                                        bedrooms
-                                    )
-
-                            })
+                            JSON.stringify(
+                                properties[i]
+                            )
 
                     }
                 );
 
 
-
-            /* =================================================
-                    CHECK SERVER RESPONSE
-            ================================================= */
-
-            if (
-                !response.ok
-            ) {
+            if (!response.ok) {
 
                 throw new Error(
                     "Server returned HTTP " +
@@ -1087,181 +900,52 @@ async function predictPrices() {
             }
 
 
-
-            /* =================================================
-                       READ JSON
-            ================================================= */
-
-            const result =
+            const data =
                 await response.json();
 
 
-            if (
-                !result.success
-            ) {
+            if (!data.success) {
 
                 throw new Error(
-                    result.error ||
-                    "Prediction failed"
+                    data.error ||
+                    "Prediction failed."
                 );
 
             }
 
 
-            predictions.push(
-                Number(
-                    result.price
-                )
-            );
+            results.push({
+
+                flat:
+                    i + 1,
+
+                price:
+                    data.price,
+
+                details:
+                    properties[i]
+
+            });
 
         }
 
 
-
-        /* =================================================
-                       SAVE HISTORY
-        ================================================= */
-
-        let history = [];
+        showResults(results);
 
 
-        try {
-
-            const storedHistory =
-                localStorage.getItem(
-                    "predictionHistory"
-                );
-
-
-            if (
-                storedHistory
-            ) {
-
-                history =
-                    JSON.parse(
-                        storedHistory
-                    );
-
-            }
-
-        }
-
-        catch (error) {
-
-            console.error(
-                "History error:",
-                error
-            );
-
-            history = [];
-
-        }
-
-
-
-        /* OLD FORMAT */
-
-        if (
-            Array.isArray(history) &&
-            history.length > 0 &&
-            typeof history[0] === "number"
-        ) {
-
-            history = [
-
-                {
-
-                    id:
-                        Date.now(),
-
-                    date:
-                        new Date().toLocaleString(
-                            "en-IN",
-                            {
-                                dateStyle:
-                                    "medium",
-
-                                timeStyle:
-                                    "short"
-                            }
-                        ),
-
-                    predictions:
-                        history
-
-                }
-
-            ];
-
-        }
-
-
-
-        /* NEW SESSION */
-
-        const newSession = {
-
-            id:
-                Date.now(),
-
-            date:
-                new Date().toLocaleString(
-                    "en-IN",
-                    {
-                        dateStyle:
-                            "medium",
-
-                        timeStyle:
-                            "short"
-                    }
-                ),
-
-            predictions:
-                predictions
-
-        };
-
-
-        history.unshift(
-            newSession
+        savePredictionHistory(
+            results
         );
 
-
-        history =
-            history.slice(
-                0,
-                20
-            );
-
-
-        localStorage.setItem(
-            "predictionHistory",
-            JSON.stringify(
-                history
-            )
-        );
-
-
-
-        /* SHOW RESULTS */
-
-        showResults(
-            predictions
-        );
 
     }
-
-
     catch (error) {
 
-        console.error(
-            "Prediction Error:",
-            error
-        );
+        console.error(error);
 
 
         alert(
-            "❌ Prediction Error\n\n" +
+            "Unable to connect to the AI server.\n\n" +
             error.message
         );
 
@@ -1272,33 +956,25 @@ async function predictPrices() {
 
 
 /* =====================================================
-                     SHOW RESULTS
+   SHOW RESULTS
 ===================================================== */
 
-function showResults(
-    predictions
-) {
-
-    const resultCards =
-        document.getElementById(
-            "resultCards"
-        );
+function showResults(results) {
 
 
-    resultCards.innerHTML = "";
+    const resultsContainer =
+        document.getElementById("results");
 
 
-    predictions.forEach(
-        (
-            price,
-            index
-        ) => {
+    resultsContainer.innerHTML = "";
+
+
+    results.forEach(
+        function(result) {
 
 
             const card =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
 
             card.className =
@@ -1307,26 +983,65 @@ function showResults(
 
             card.innerHTML = `
 
-                <div class="result-flat">
-                    🏠 Flat ${index + 1}
+                <h3>
+                    🏠 Flat ${result.flat}
+                </h3>
+
+
+                <p
+                    style="
+                        color:#667085;
+                        margin-bottom:8px;
+                    "
+                >
+                    Estimated Market Price
+                </p>
+
+
+                <div class="price">
+                    ₹${result.price} Lakhs
                 </div>
 
 
-                <div class="result-price">
-                    ₹${Number(
-                        price
-                    ).toFixed(2)}
-                </div>
+                <div
+                    style="
+                        margin-top:20px;
+                        display:grid;
+                        grid-template-columns:1fr 1fr;
+                        gap:10px;
+                        color:#667085;
+                        font-size:13px;
+                    "
+                >
 
+                    <div>
+                        📐
+                        ${result.details.Area_sqft}
+                        sqft
+                    </div>
 
-                <div class="result-unit">
-                    Estimated Price in Lakhs
+                    <div>
+                        🧭
+                        ${result.details.Facing}
+                    </div>
+
+                    <div>
+                        🏢
+                        Floor ${result.details.Floor}
+                    </div>
+
+                    <div>
+                        🛏
+                        ${result.details.Bedrooms}
+                        BHK
+                    </div>
+
                 </div>
 
             `;
 
 
-            resultCards.appendChild(
+            resultsContainer.appendChild(
                 card
             );
 
@@ -1334,19 +1049,14 @@ function showResults(
     );
 
 
-    document.getElementById(
-        "step1"
-    ).style.display = "none";
+    document
+        .getElementById("step2")
+        .classList.remove("active");
 
 
-    document.getElementById(
-        "step2"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "resultSection"
-    ).style.display = "block";
+    document
+        .getElementById("resultSection")
+        .classList.add("active");
 
 
     window.scrollTo({
@@ -1359,19 +1069,19 @@ function showResults(
 
 
 /* =====================================================
-                  BACK TO DETAILS
+   BACK TO DETAILS
 ===================================================== */
 
 function backToDetails() {
 
-    document.getElementById(
-        "resultSection"
-    ).style.display = "none";
+    document
+        .getElementById("resultSection")
+        .classList.remove("active");
 
 
-    document.getElementById(
-        "step2"
-    ).style.display = "block";
+    document
+        .getElementById("step2")
+        .classList.add("active");
 
 
     window.scrollTo({
@@ -1384,24 +1094,19 @@ function backToDetails() {
 
 
 /* =====================================================
-                  NEW PREDICTION
+   START NEW PREDICTION
 ===================================================== */
 
 function startNewPrediction() {
 
-    document.getElementById(
-        "resultSection"
-    ).style.display = "none";
+    document
+        .getElementById("resultSection")
+        .classList.remove("active");
 
 
-    document.getElementById(
-        "step2"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "step1"
-    ).style.display = "block";
+    document
+        .getElementById("step1")
+        .classList.add("active");
 
 
     window.scrollTo({
@@ -1414,10 +1119,57 @@ function startNewPrediction() {
 
 
 /* =====================================================
-                     SHOW HISTORY
+   HISTORY STORAGE
+===================================================== */
+
+function savePredictionHistory(
+    results
+) {
+
+
+    const history =
+        JSON.parse(
+            localStorage.getItem(
+                "smartEstateHistory"
+            ) || "[]"
+        );
+
+
+    history.unshift({
+
+        date:
+            new Date().toLocaleString(),
+
+        results:
+            results
+
+    });
+
+
+    if (history.length > 20) {
+
+        history.splice(
+            20
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "smartEstateHistory",
+        JSON.stringify(history)
+    );
+
+}
+
+
+
+/* =====================================================
+   SHOW HISTORY
 ===================================================== */
 
 function showHistory() {
+
 
     const modal =
         document.getElementById(
@@ -1425,119 +1177,48 @@ function showHistory() {
         );
 
 
-    const content =
+    const historyList =
         document.getElementById(
-            "historyContent"
+            "historyList"
         );
 
 
-    content.innerHTML = "";
-
-
-    let history = [];
-
-
-    try {
-
-        const stored =
+    const history =
+        JSON.parse(
             localStorage.getItem(
-                "predictionHistory"
-            );
-
-
-        if (
-            stored
-        ) {
-
-            history =
-                JSON.parse(
-                    stored
-                );
-
-        }
-
-    }
-
-    catch (error) {
-
-        console.error(
-            "History reading error:",
-            error
+                "smartEstateHistory"
+            ) || "[]"
         );
 
-        history = [];
 
-    }
+    historyList.innerHTML = "";
 
-
-
-    /* OLD HISTORY FORMAT */
 
     if (
-        Array.isArray(history) &&
-        history.length > 0 &&
-        typeof history[0] === "number"
-    ) {
-
-        history = [
-
-            {
-
-                id:
-                    Date.now(),
-
-                date:
-                    new Date().toLocaleString(
-                        "en-IN",
-                        {
-                            dateStyle:
-                                "medium",
-
-                            timeStyle:
-                                "short"
-                        }
-                    ),
-
-                predictions:
-                    history
-
-            }
-
-        ];
-
-
-        localStorage.setItem(
-            "predictionHistory",
-            JSON.stringify(
-                history
-            )
-        );
-
-    }
-
-
-
-    /* NO HISTORY */
-
-    if (
-        !Array.isArray(history) ||
         history.length === 0
     ) {
 
-        content.innerHTML = `
+        historyList.innerHTML = `
 
-            <div class="empty-history">
+            <div
+                style="
+                    text-align:center;
+                    padding:40px 10px;
+                    color:#667085;
+                "
+            >
 
-                <div class="empty-icon">
-                    🕘
+                <div
+                    style="
+                        font-size:40px;
+                        margin-bottom:10px;
+                    "
+                >
+                    🏠
                 </div>
 
-                <h3>
-                    No Prediction History
-                </h3>
-
                 <p>
-                    Your AI predictions will appear here.
+                    No prediction history yet.
                 </p>
 
             </div>
@@ -1545,74 +1226,72 @@ function showHistory() {
         `;
 
     }
-
-
-
-    /* SHOW HISTORY */
-
     else {
 
 
         history.forEach(
-            (
-                session,
-                sessionIndex
-            ) => {
+            function(session) {
 
 
-                if (
-                    !session ||
-                    !Array.isArray(
-                        session.predictions
-                    )
-                ) {
-
-                    return;
-
-                }
-
-
-                const sessionBox =
+                const item =
                     document.createElement(
                         "div"
                     );
 
 
-                sessionBox.className =
-                    "history-session";
+                item.style.cssText = `
+                    padding:18px;
+                    margin-bottom:14px;
+                    border:1px solid #e7eaf3;
+                    border-radius:16px;
+                    background:#fafbff;
+                `;
 
 
-                let flatHTML = "";
+                let html = `
+
+                    <div
+                        style="
+                            font-size:12px;
+                            color:#98a2b3;
+                            margin-bottom:12px;
+                        "
+                    >
+                        ${session.date}
+                    </div>
+
+                `;
 
 
-                session.predictions.forEach(
-                    (
-                        price,
-                        flatIndex
-                    ) => {
+                session.results.forEach(
+                    function(result) {
 
 
-                        flatHTML += `
+                        html += `
 
-                            <div class="history-item">
+                            <div
+                                style="
+                                    display:flex;
+                                    justify-content:space-between;
+                                    align-items:center;
+                                    gap:10px;
+                                    padding:8px 0;
+                                "
+                            >
 
-                                <div class="history-flat">
-
+                                <span>
                                     🏠 Flat
-                                    ${flatIndex + 1}
+                                    ${result.flat}
+                                </span>
 
-                                </div>
-
-
-                                <div class="history-price">
-
-                                    ₹${Number(
-                                        price
-                                    ).toFixed(2)}
-
+                                <strong
+                                    style="
+                                        color:#635bff;
+                                    "
+                                >
+                                    ₹${result.price}
                                     Lakhs
-
-                                </div>
+                                </strong>
 
                             </div>
 
@@ -1622,62 +1301,12 @@ function showHistory() {
                 );
 
 
-                sessionBox.innerHTML = `
-
-                    <div class="history-session-header">
-
-                        <div>
-
-                            <strong>
-
-                                Prediction #${
-                                    history.length -
-                                    sessionIndex
-                                }
-
-                            </strong>
+                item.innerHTML =
+                    html;
 
 
-                            <div class="history-date">
-
-                                🗓 ${
-                                    session.date ||
-                                    "Unknown date"
-                                }
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="history-count">
-
-                            ${
-                                session.predictions.length
-                            }
-
-                            Flat${
-                                session.predictions.length > 1
-                                    ? "s"
-                                    : ""
-                            }
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="history-flats">
-
-                        ${flatHTML}
-
-                    </div>
-
-                `;
-
-
-                content.appendChild(
-                    sessionBox
+                historyList.appendChild(
+                    item
                 );
 
             }
@@ -1686,9 +1315,8 @@ function showHistory() {
     }
 
 
-
     modal.classList.add(
-        "active"
+        "show"
     );
 
 }
@@ -1696,7 +1324,7 @@ function showHistory() {
 
 
 /* =====================================================
-                  CLOSE HISTORY
+   CLOSE HISTORY
 ===================================================== */
 
 function closeHistory() {
@@ -1706,7 +1334,7 @@ function closeHistory() {
             "historyModal"
         )
         .classList.remove(
-            "active"
+            "show"
         );
 
 }
@@ -1714,32 +1342,17 @@ function closeHistory() {
 
 
 /* =====================================================
-              OPEN CLEAR HISTORY MODAL
+   CLEAR HISTORY
 ===================================================== */
 
 function clearHistory() {
-
-    const stored =
-        localStorage.getItem(
-            "predictionHistory"
-        );
-
-
-    if (
-        !stored
-    ) {
-
-        return;
-
-    }
-
 
     document
         .getElementById(
             "clearModal"
         )
         .classList.add(
-            "active"
+            "show"
         );
 
 }
@@ -1747,7 +1360,7 @@ function clearHistory() {
 
 
 /* =====================================================
-              CLOSE CLEAR HISTORY MODAL
+   CLOSE CLEAR MODAL
 ===================================================== */
 
 function closeClearModal() {
@@ -1757,7 +1370,7 @@ function closeClearModal() {
             "clearModal"
         )
         .classList.remove(
-            "active"
+            "show"
         );
 
 }
@@ -1765,13 +1378,14 @@ function closeClearModal() {
 
 
 /* =====================================================
-             CONFIRM CLEAR HISTORY
+   CONFIRM CLEAR HISTORY
 ===================================================== */
 
 function confirmClearHistory() {
 
+
     localStorage.removeItem(
-        "predictionHistory"
+        "smartEstateHistory"
     );
 
 
@@ -1785,62 +1399,58 @@ function confirmClearHistory() {
 
 
 /* =====================================================
-              OUTSIDE CLICK - HISTORY
+   OUTSIDE CLICK
 ===================================================== */
 
-document
-    .getElementById(
-        "historyModal"
-    )
-    .addEventListener(
-        "click",
-        function(event) {
+window.addEventListener(
+    "click",
+    function(event) {
 
-            if (
-                event.target === this
-            ) {
 
-                closeHistory();
+        const historyModal =
+            document.getElementById(
+                "historyModal"
+            );
 
-            }
+
+        const clearModal =
+            document.getElementById(
+                "clearModal"
+            );
+
+
+        if (
+            event.target ===
+            historyModal
+        ) {
+
+            closeHistory();
 
         }
-    );
+
+
+        if (
+            event.target ===
+            clearModal
+        ) {
+
+            closeClearModal();
+
+        }
+
+    }
+);
 
 
 
 /* =====================================================
-            OUTSIDE CLICK - CLEAR MODAL
-===================================================== */
-
-document
-    .getElementById(
-        "clearModal"
-    )
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target === this
-            ) {
-
-                closeClearModal();
-
-            }
-
-        }
-    );
-
-
-
-/* =====================================================
-                       ESC KEY
+   ESC KEY
 ===================================================== */
 
 document.addEventListener(
     "keydown",
     function(event) {
+
 
         if (
             event.key === "Escape"
