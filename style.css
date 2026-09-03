@@ -1,5 +1,5 @@
 /* =====================================================
-   SMART ESTATE — MODERN AI REAL ESTATE UI
+   SMART ESTATE — FINAL LIGHT AI UI
 ===================================================== */
 
 * {
@@ -24,13 +24,14 @@ body {
         linear-gradient(
             135deg,
             #f8faff 0%,
-            #eef4ff 45%,
-            #f8f5ff 100%
+            #f2f6ff 50%,
+            #faf7ff 100%
         );
 
     color: #172033;
     min-height: 100vh;
 }
+
 
 /* =====================================================
    NAVBAR
@@ -38,16 +39,18 @@ body {
 
 .navbar {
     width: 100%;
-    padding: 18px 6%;
+    padding: 16px 6%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.92);
 
-    border-bottom: 1px solid rgba(100, 116, 139, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(100, 116, 139, 0.10);
 
     position: sticky;
     top: 0;
@@ -57,10 +60,11 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
 
     font-size: 22px;
     font-weight: 800;
+
     color: #18213d;
 }
 
@@ -69,31 +73,35 @@ body {
 }
 
 .history-btn {
-    border: none;
+    border: 1px solid #e4e7f2;
+
     background: #ffffff;
+
     color: #344054;
 
-    padding: 11px 18px;
-    border-radius: 12px;
+    padding: 10px 17px;
+
+    border-radius: 11px;
 
     font-size: 14px;
     font-weight: 600;
 
     cursor: pointer;
 
-    box-shadow:
-        0 5px 20px rgba(31, 41, 55, 0.08);
-
     transition: 0.25s ease;
 }
 
 .history-btn:hover {
-    transform: translateY(-2px);
     color: #635bff;
 
+    border-color: #cfd2ff;
+
     box-shadow:
-        0 10px 28px rgba(99, 91, 255, 0.14);
+        0 8px 22px rgba(99, 91, 255, 0.10);
+
+    transform: translateY(-1px);
 }
+
 
 /* =====================================================
    MAIN CONTAINER
@@ -101,9 +109,12 @@ body {
 
 .container {
     width: min(1180px, 90%);
+
     margin: auto;
-    padding: 55px 0 80px;
+
+    padding: 48px 0 75px;
 }
+
 
 /* =====================================================
    STEP SECTIONS
@@ -119,6 +130,7 @@ body {
 
 .step-number {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -127,13 +139,15 @@ body {
     border-radius: 30px;
 
     background: #eef0ff;
+
     color: #635bff;
 
     font-size: 13px;
     font-weight: 700;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
+
 
 /* =====================================================
    STEP 1 — HERO
@@ -143,13 +157,12 @@ body {
     position: relative;
 }
 
-/* Main heading */
-
 #step1 h1 {
-    max-width: 650px;
+    max-width: 700px;
 
-    font-size: clamp(42px, 5vw, 68px);
-    line-height: 1.05;
+    font-size: clamp(42px, 5vw, 66px);
+
+    line-height: 1.06;
 
     letter-spacing: -2.5px;
 
@@ -165,12 +178,11 @@ body {
 
     -webkit-background-clip: text;
     background-clip: text;
+
     color: transparent;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
-
-/* Description */
 
 #step1 > p {
     max-width: 650px;
@@ -178,10 +190,12 @@ body {
     color: #667085;
 
     font-size: 17px;
-    line-height: 1.75;
 
-    margin-bottom: 30px;
+    line-height: 1.7;
+
+    margin-bottom: 26px;
 }
+
 
 /* =====================================================
    HERO IMAGE
@@ -189,63 +203,57 @@ body {
 
 #step1 > div:nth-of-type(2) {
     width: 100% !important;
-    height: 360px !important;
 
-    border-radius: 28px !important;
+    height: 350px !important;
+
+    border-radius: 26px !important;
 
     overflow: hidden;
 
-    margin: 25px 0 30px !important;
+    margin: 22px 0 26px !important;
 
     box-shadow:
-        0 25px 70px rgba(51, 65, 85, 0.15);
+        0 22px 60px rgba(51, 65, 85, 0.13);
 }
 
-#step1 > div:nth-of-type(2)::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    pointer-events: none;
-}
 
 /* =====================================================
    PROPERTY SELECTION
 ===================================================== */
 
 #step1 > div:nth-of-type(3) {
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: #ffffff !important;
 
-    border: 1px solid rgba(148, 163, 184, 0.15) !important;
+    border: 1px solid #e7eaf3 !important;
 
-    border-radius: 22px !important;
+    border-radius: 20px !important;
 
-    padding: 26px !important;
+    padding: 24px !important;
 
     box-shadow:
-        0 15px 45px rgba(30, 41, 59, 0.08);
+        0 12px 35px rgba(30, 41, 59, 0.06);
 }
 
 #step1 > div:nth-of-type(3) label {
     display: block;
 
     font-size: 14px;
+
     font-weight: 700;
 
     color: #344054;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 #step1 select {
     width: 100%;
 
-    padding: 14px 16px;
+    padding: 13px 15px;
 
     border: 1px solid #d9def0;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
     background: #ffffff;
 
@@ -262,8 +270,9 @@ body {
     border-color: #7167ff;
 
     box-shadow:
-        0 0 0 4px rgba(113, 103, 255, 0.10);
+        0 0 0 4px rgba(113, 103, 255, 0.09);
 }
+
 
 /* =====================================================
    START BUTTON
@@ -272,11 +281,11 @@ body {
 #step1 button {
     border: none;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
-    padding: 15px 25px;
+    padding: 14px 24px;
 
-    margin-top: 16px;
+    margin-top: 15px;
 
     background:
         linear-gradient(
@@ -285,25 +294,27 @@ body {
             #8758e8
         );
 
-    color: white;
+    color: #ffffff;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
 
     box-shadow:
-        0 12px 25px rgba(99, 91, 255, 0.22);
+        0 10px 24px rgba(99, 91, 255, 0.20);
 
     transition: 0.25s ease;
 }
 
 #step1 button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 17px 32px rgba(99, 91, 255, 0.28);
+        0 15px 30px rgba(99, 91, 255, 0.25);
 }
+
 
 /* =====================================================
    FEATURE CARDS
@@ -317,49 +328,50 @@ body {
 
     gap: 18px;
 
-    margin-top: 30px !important;
+    margin-top: 27px !important;
 }
 
 #step1 > div:nth-of-type(4) > div {
-    background: rgba(255, 255, 255, 0.82) !important;
+    background: #ffffff !important;
 
-    border:
-        1px solid rgba(148, 163, 184, 0.14) !important;
+    border: 1px solid #e7eaf3 !important;
 
-    border-radius: 20px !important;
+    border-radius: 18px !important;
 
-    padding: 22px !important;
+    padding: 21px !important;
 
     box-shadow:
-        0 12px 35px rgba(30, 41, 59, 0.06);
+        0 9px 28px rgba(30, 41, 59, 0.05);
 
     transition: 0.25s ease;
 }
 
 #step1 > div:nth-of-type(4) > div:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 
     box-shadow:
-        0 18px 42px rgba(99, 91, 255, 0.12);
+        0 15px 35px rgba(99, 91, 255, 0.10);
 }
+
 
 /* =====================================================
    STEP 2
 ===================================================== */
 
 #step2 h2 {
-    font-size: 38px;
+    font-size: 37px;
 
     color: #202943;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 #step2 > p {
     color: #667085;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
+
 
 /* =====================================================
    FLAT FORMS
@@ -371,39 +383,39 @@ body {
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 22px;
+    gap: 21px;
 }
 
 .flat-form {
-    background: rgba(255, 255, 255, 0.92);
+    background: #ffffff;
 
-    border:
-        1px solid rgba(148, 163, 184, 0.15);
+    border: 1px solid #e7eaf3;
 
-    border-radius: 22px;
+    border-radius: 20px;
 
-    padding: 26px;
+    padding: 25px;
 
     box-shadow:
-        0 12px 38px rgba(30, 41, 59, 0.07);
+        0 10px 32px rgba(30, 41, 59, 0.06);
 
     transition: 0.25s ease;
 }
 
 .flat-form:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 18px 45px rgba(30, 41, 59, 0.10);
+        0 16px 38px rgba(30, 41, 59, 0.09);
 }
 
 .flat-form h3 {
     color: #303a75;
 
-    margin-bottom: 22px;
+    margin-bottom: 21px;
 
     font-size: 20px;
 }
+
 
 /* =====================================================
    FORM GRID
@@ -415,11 +427,12 @@ body {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 17px;
+    gap: 16px;
 }
 
 .form-group {
     display: flex;
+
     flex-direction: column;
 }
 
@@ -441,7 +454,7 @@ body {
 
     border: 1px solid #d9def0;
 
-    border-radius: 11px;
+    border-radius: 10px;
 
     background: #ffffff;
 
@@ -459,8 +472,9 @@ body {
     border-color: #7167ff;
 
     box-shadow:
-        0 0 0 4px rgba(113, 103, 255, 0.09);
+        0 0 0 4px rgba(113, 103, 255, 0.08);
 }
+
 
 /* =====================================================
    BUTTON AREA
@@ -473,13 +487,13 @@ body {
 
     gap: 15px;
 
-    margin-top: 30px;
+    margin-top: 29px;
 }
 
 .buttons button {
     border: none;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
     padding: 13px 22px;
 
@@ -512,32 +526,33 @@ body {
             #8758e8
         );
 
-    color: white;
+    color: #ffffff;
 
     box-shadow:
-        0 10px 24px rgba(99, 91, 255, 0.20);
+        0 9px 22px rgba(99, 91, 255, 0.18);
 }
 
 .buttons button:last-child:hover {
     transform: translateY(-2px);
 }
 
+
 /* =====================================================
    RESULT SECTION
 ===================================================== */
 
 #resultSection h2 {
-    font-size: 42px;
+    font-size: 41px;
 
     color: #202943;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 #resultSection > p {
     color: #667085;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 #results {
@@ -546,33 +561,35 @@ body {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 22px;
+    gap: 21px;
 }
 
 .result-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
 
-    border:
-        1px solid rgba(148, 163, 184, 0.14);
+    border: 1px solid #e7eaf3;
 
-    border-radius: 22px;
+    border-radius: 20px;
 
-    padding: 28px;
+    padding: 27px;
 
     box-shadow:
-        0 15px 45px rgba(30, 41, 59, 0.08);
+        0 12px 36px rgba(30, 41, 59, 0.07);
 
     transition: 0.25s ease;
 }
 
 .result-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 17px 40px rgba(30, 41, 59, 0.10);
 }
 
 .result-card h3 {
     color: #303a75;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .result-card .price {
@@ -582,6 +599,7 @@ body {
 
     color: #635bff;
 }
+
 
 /* =====================================================
    HISTORY MODAL
@@ -596,6 +614,7 @@ body {
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
@@ -622,9 +641,9 @@ body {
 
     background: #ffffff;
 
-    border-radius: 24px;
+    border-radius: 23px;
 
-    padding: 30px;
+    padding: 29px;
 
     box-shadow:
         0 30px 90px rgba(15, 23, 42, 0.20);
@@ -646,6 +665,7 @@ body {
     background: #f1f3f8;
 
     width: 36px;
+
     height: 36px;
 
     border-radius: 50%;
@@ -653,25 +673,27 @@ body {
     font-size: 18px;
 }
 
+
 /* =====================================================
-   CLEAR HISTORY BUTTON
+   CLEAR HISTORY
 ===================================================== */
 
 .confirm-clear {
     border: none;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
     padding: 12px 18px;
 
     background: #ef4444;
 
-    color: white;
+    color: #ffffff;
 
     font-weight: 700;
 
     cursor: pointer;
 }
+
 
 /* =====================================================
    SCROLLBAR
@@ -691,6 +713,7 @@ body {
     border-radius: 20px;
 }
 
+
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -699,6 +722,7 @@ body {
 
     .container {
         width: 92%;
+
         padding-top: 35px;
     }
 
@@ -722,10 +746,11 @@ body {
     }
 }
 
+
 @media (max-width: 600px) {
 
     .navbar {
-        padding: 15px 5%;
+        padding: 14px 5%;
     }
 
     .logo {
