@@ -1,11 +1,20 @@
 from flask import Flask, render_template, send_from_directory, request, jsonify
+from flask_cors import CORS
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 
+
+# =====================================================
+# FLASK APP
+# =====================================================
+
 app = Flask(__name__, template_folder=".")
+
+# Enable CORS for GitHub Pages frontend
+CORS(app)
 
 
 # =====================================================
@@ -54,7 +63,11 @@ preprocessor = ColumnTransformer(
 
 model = Pipeline(
     steps=[
-        ("preprocessor", preprocessor),
+        (
+            "preprocessor",
+            preprocessor
+        ),
+
         (
             "regressor",
             RandomForestRegressor(
@@ -79,7 +92,10 @@ model.fit(X, y)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+
+    return render_template(
+        "index.html"
+    )
 
 
 # =====================================================
@@ -88,27 +104,50 @@ def home():
 
 @app.route("/style.css")
 def style():
-    return send_from_directory(".", "style.css")
+
+    return send_from_directory(
+        ".",
+        "style.css"
+    )
 
 
 # =====================================================
 # PREDICT API
 # =====================================================
 
-@app.route("/predict", methods=["POST"])
+@app.route(
+    "/predict",
+    methods=["POST"]
+)
 def predict():
 
     try:
 
+        # Receive JSON data
         data_received = request.get_json()
 
-        area = float(data_received["Area_sqft"])
+
+        # Read input values
+        area = float(
+            data_received["Area_sqft"]
+        )
+
         facing = data_received["Facing"]
-        floor = int(data_received["Floor"])
-        parking = float(data_received["Parking_sqft"])
-        bedrooms = int(data_received["Bedrooms"])
+
+        floor = int(
+            data_received["Floor"]
+        )
+
+        parking = float(
+            data_received["Parking_sqft"]
+        )
+
+        bedrooms = int(
+            data_received["Bedrooms"]
+        )
 
 
+        # Create input dataframe
         input_data = pd.DataFrame(
             [
                 {
@@ -122,13 +161,20 @@ def predict():
         )
 
 
-        prediction = model.predict(input_data)[0]
+        # AI prediction
+        prediction = model.predict(
+            input_data
+        )[0]
 
 
+        # Return JSON response
         return jsonify(
             {
                 "success": True,
-                "price": round(float(prediction), 2)
+                "price": round(
+                    float(prediction),
+                    2
+                )
             }
         )
 
@@ -148,4 +194,7 @@ def predict():
 # =====================================================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+
+    app.run(
+        debug=True
+    )
